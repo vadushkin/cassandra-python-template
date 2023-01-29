@@ -5,6 +5,7 @@ $ `cqlsh`
 $ `CREATE KEYSPACE employee WITH replication = {'class' : 'SimpleStrategy', 'replication_factor':2};`
 $ `USE employee;`
 $ `CREATE TABLE employee_details (id INT, age INT, city TEXT, name TEXT, PRIMARY KEY(id));`
+# end then run this python file
 """
 from cassandra.cluster import Cluster
 
