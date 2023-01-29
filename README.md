@@ -61,14 +61,14 @@ docker exec -it your_name_container bash
     docker ps
 
 <h4>Something like that:</h4>
-![img.png](images/example.png)
+<img src="images/example.png" alt="example"/>
   </div>
 <h4>Copy CONTAINER ID: </h4>
 
 
     86a1ca...
 
-<h4>The command would be like:</h4>
+<h3>The command will be like this:</h3>
 
     docker exec -it 86a1ca2fcda8 bash
 </details>
