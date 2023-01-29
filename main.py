@@ -1,17 +1,20 @@
-"""Commands:
-$ `docker run --name test-cassandra-v2 -p 9042:9042 -d cassandra:latest` or `docker-compose up -d --build`
-$ `docker exec -it test-cassandra-v2 bash`
-$ `cqlsh`
-$ `CREATE KEYSPACE employee WITH replication = {'class' : 'SimpleStrategy', 'replication_factor':2};`
-$ `USE employee;`
-$ `CREATE TABLE employee_details (id INT, age INT, city TEXT, name TEXT, PRIMARY KEY(id));`
-# end then run this python file
+"""
+Commands:
+
+* docker run --name test-cassandra-v2 -p 9042:9042 -d cassandra:latest or docker-compose up -d --build
+* docker exec -it test-cassandra-v2 bash
+* cqlsh
+* CREATE KEYSPACE employee WITH replication = {'class' : 'SimpleStrategy', 'replication_factor':2};
+* USE employee;
+* CREATE TABLE employee_details (id INT, age INT, city TEXT, name TEXT, PRIMARY KEY(id));
+
+# and then run this python file
 """
 from cassandra.cluster import Cluster
 
 # connect to cluster
 cluster = Cluster(['0.0.0.0'], port=9042)  # port in docker file or in docker run ... -p `(9042):9042` ...
-# before that we need to create keyspace in cassandra (line 5)
+# before that we need to create database in cassandra (line 5)
 session = cluster.connect('employee')
 
 # Writing data into cassandra
