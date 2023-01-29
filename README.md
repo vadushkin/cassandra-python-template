@@ -15,28 +15,6 @@ git clone https://github.com/vadushkin/cassandra-python-template.git
 cd cassandra-python-template
 ```
 
-#### Commands:
-
-```main.py```
-
-```python
-"""
-Commands:
-
-* docker run --name test-cassandra-v2 -p 9042:9042 -d cassandra:latest or docker-compose up -d --build
-* docker exec -it test-cassandra-v2 bash
-* cqlsh
-* CREATE KEYSPACE employee WITH replication = {'class' : 'SimpleStrategy', 'replication_factor':2};
-* USE employee;
-* CREATE TABLE employee_details (id INT, age INT, city TEXT, name TEXT, PRIMARY KEY(id));
-
-# and then run this python file
-"""
-from cassandra.cluster import Cluster
-
-...
-```
-
 Run
 ---
 
@@ -65,12 +43,12 @@ docker exec -it your_name_container bash
   </div>
 <h4>Copy CONTAINER ID: </h4>
 
-
     86a1ca...
 
 <h3>The command will be like this:</h3>
 
     docker exec -it 86a1ca2fcda8 bash
+
 </details>
 
 #### Run Cassandra's shell
